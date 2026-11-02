@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pad">
+  <meta name="theme-color" content="#0b0d10">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="stylesheet" href="style.css">
+  <title>iPad Controller</title>
+</head>
+<body>
+  <div id="hud-layer">
+  <header id="topbar">
+    <span id="status" class="status off" title="offline"></span>
+    <span id="ping">-- ms</span>
+    <span id="rate" hidden>0 ev/s</span>
+    <span id="player" class="badge" hidden></span>
+    <span id="kbm" class="badge kbm" hidden title="Keyboard and mouse only: controller features are off on the PC">KB/M ONLY</span>
+    <button id="profile-name" class="chip" type="button" title="Hold to switch profile">Profile</button>
+    <button id="mode-btn" class="chip" type="button" title="Joystick output">WASD</button>
+    <button id="fs-btn" class="chip icon" type="button" title="Fullscreen" aria-label="Toggle fullscreen">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path>
+      </svg>
+    </button>
+    <button id="lock-btn" class="chip icon" type="button" title="Hold to edit layout" aria-label="Hold to edit layout">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="5" y="11" width="14" height="10" rx="2"></rect>
+        <path d="M8 11V8a4 4 0 0 1 8 0v3"></path>
+      </svg>
+    </button>
+  </header>
+  </div>
+
+  <header id="editbar">
+    <span class="edit-title">EDIT</span>
+    <button id="done-btn" class="chip primary" type="button">DONE</button>
+    <button id="profile-btn" class="chip profile" type="button" title="Profiles">Profile ▾</button>
+    <button id="undo-btn" class="chip" type="button">UNDO</button>
+    <button id="snap-btn" class="chip" type="button">GRID ON</button>
+    <button id="add-btn" class="chip" type="button">+ ADD CONTROL</button>
+    <button id="reset-btn" class="chip" type="button">RESET LAYOUT</button>
+  </header>
+  <div id="add-menu" hidden></div>
+  <div id="profile-menu" class="popover" hidden></div>
+  <div id="switcher" class="popover" hidden></div>
+  <input id="import-file" type="file" accept=".json,application/json" hidden>
+  <aside id="panel" hidden></aside>
+  <div id="toast" role="status"></div>
+
+  <main id="stage"></main>
+
+  <div id="rotate">Rotate iPad to landscape</div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

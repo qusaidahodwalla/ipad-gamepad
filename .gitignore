@@ -1,0 +1,42 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Build and release output (the exe is published as a GitHub Release asset, never committed)
+build/
+dist/
+release/
+*.zip
+
+# Personal runtime data (also lives in %APPDATA%\iPadGamepad): never commit
+profiles/
+devices.json
+settings.json
+window.json
+app.log
+*.log
+webview/
+
+# Local test and scratch folders
+scratch/
+scratchpad/
+tmp/
+test-data/
+md[0-9]*/
+appdata*/
+srv[0-9]*/
+
+# Tool and editor state
+.claude/
+.playwright-mcp/
+.vscode/
+.idea/
+*.png.tmp
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini

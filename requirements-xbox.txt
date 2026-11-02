@@ -1,0 +1,3 @@
+# Optional, XBOX mode only. WARNING: pip builds this package from source and its setup
+# launches the ViGEmBus driver installer (needs admin approval). See README, "XBOX mode".
+vgamepad>=0.1.0

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iPad Gamepad</title>
+<link rel="icon" href="../icon-192.png">
+<link rel="stylesheet" href="dash.css">
+</head>
+<body>
+<header>
+  <h1>iPad Gamepad</h1>
+  <span id="link" class="pill off">connecting</span>
+  <span id="dry" class="pill warn" hidden>dry run: input is logged, not injected</span>
+  <span id="kbmbadge" class="pill kbm" hidden title="No virtual controllers: keyboard and mouse only">KB/M ONLY</span>
+  <span class="spacer"></span>
+  <div class="seg" id="filters" role="group" aria-label="Show">
+    <button data-v="all">All</button><button data-v="devices">App devices</button><button data-v="pads">Our pads</button><button data-v="real">Real controllers</button>
+  </div>
+  <div class="seg" id="views" role="group" aria-label="View">
+    <button data-v="detailed">Detailed</button><button data-v="grid">Grid</button><button data-v="list">List</button>
+  </div>
+  <label class="toggle" id="kbmtoggle" title="Keyboard and mouse only: never loads the virtual controller driver client. Applies after a restart."><input id="kbm" type="checkbox"> KB/M only mode</label>
+  <label class="size" title="Scale cards and diagrams">Size <input id="size" type="range" min="50" max="150" step="5" value="100"><span id="sizev">100%</span></label>
+</header>
+<div id="kbmbar" class="kbmbar" hidden><span id="kbmtext"></span><button id="restart">Restart</button></div>
+<div id="summary" class="summary"><span id="sumtext"></span><span id="sumnote"></span></div>
+
+<main>
+  <section id="admin" data-kind="admin">
+    <h2>Pairing</h2>
+    <div class="pair">
+      <div id="code" class="code" title="Enter this on the new device">----</div>
+      <div class="pair-side">
+        <div id="codeinfo" class="dim">No code is active.</div>
+        <button id="newcode">New code</button>
+        <div class="dim">Open <b id="url">...</b> on the device, then enter the code.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sec-devices">
+    <h2>App devices <small>iPad / phone connections</small></h2>
+    <div id="devices" class="cards"></div>
+    <p id="nodevices" class="dim" hidden>No device is paired yet. Open the address above on a device and enter the code.</p>
+  </section>
+
+  <section id="sec-pads">
+    <h2>Virtual controllers <small>created by this app, one per device that needs one</small></h2>
+    <div id="pads" class="cards"></div>
+    <p id="nopads" class="dim">None right now.</p>
+  </section>
+
+  <section id="sec-real">
+    <h2>Real controllers <small>read only: nothing is ever sent to them</small></h2>
+    <div id="real" class="cards"></div>
+    <p id="noreal" class="dim">No other controller detected.</p>
+    <p id="sdlerr" class="dim" hidden></p>
+  </section>
+  <section id="sec-list">
+    <div id="list" class="list"></div>
+    <p id="nolist" class="dim" hidden>Nothing to show for this filter.</p>
+  </section>
+</main>
+<div id="toast" class="toast"></div>
+<script type="module" src="dash.js"></script>
+</body>
+</html>

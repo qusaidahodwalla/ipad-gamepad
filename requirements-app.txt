@@ -1,0 +1,9 @@
+# Extra packages for the desktop app (app.py) and for building it. run.bat does not need these.
+# vgamepad is NOT listed here on purpose (see requirements-xbox.txt): installing it launches the
+# ViGEmBus driver installer. The build bundles the already installed copy.
+-r requirements.txt
+pywebview>=5
+pystray>=0.19
+pillow>=10
+pygame-ce>=2.5
+pyinstaller>=6
